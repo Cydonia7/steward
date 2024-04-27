@@ -508,7 +508,7 @@ impl ProcessPool {
                             task::spawn({
                                 let tag = colored_tag_col.clone();
                                 async move {
-                                    while let Some(line) = reader.next_line().await.unwrap_or_default("") {
+                                    while let Some(line) = reader.next_line().await.unwrap_or_default() {
                                         eprintln!("{} {}", tag, line);
                                     }
                                 }
